@@ -24,3 +24,7 @@ Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
 [01:13:29.284] Server  LOG     The doc is - [object Object]
 [01:13:29.285] Server  LOG     The shortcut is - g
 [01:14:00.532] Server  LOG      ✓ Compiled in 706ms
+[01:19:12.324] Server  LOG      ✓ Compiled in 453ms
+[01:19:12.340] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/shorten/page.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:19:15.574] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:25:52.755] Server  LOG      ✓ Compiled in 2.2s

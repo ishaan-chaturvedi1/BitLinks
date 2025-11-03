@@ -59,7 +59,7 @@ const shorten = ()=>{
             setGenerated(`/${shorturl}`);
             console.log(result);
             alert(result.message);
-        }).catch((error)=>console.error(error));
+        });
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "mx-auto max-w-[90vw] md:max-w-[40vw] flex justify-center items-center flex-col bg-purple-100 my-16 p-8 rounded-lg",
@@ -69,7 +69,7 @@ const shorten = ()=>{
                 children: "Generate your short URLs"
             }, void 0, false, {
                 fileName: "[project]/app/shorten/page.js",
-                lineNumber: 44,
+                lineNumber: 43,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -85,7 +85,7 @@ const shorten = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "[project]/app/shorten/page.js",
-                        lineNumber: 46,
+                        lineNumber: 45,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -98,7 +98,7 @@ const shorten = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "[project]/app/shorten/page.js",
-                        lineNumber: 47,
+                        lineNumber: 46,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -107,13 +107,13 @@ const shorten = ()=>{
                         children: "Generate"
                     }, void 0, false, {
                         fileName: "[project]/app/shorten/page.js",
-                        lineNumber: 48,
+                        lineNumber: 47,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/shorten/page.js",
-                lineNumber: 45,
+                lineNumber: 44,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             generated && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
@@ -127,19 +127,19 @@ const shorten = ()=>{
                         children: generated
                     }, void 0, false, {
                         fileName: "[project]/app/shorten/page.js",
-                        lineNumber: 51,
+                        lineNumber: 50,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/shorten/page.js",
-                lineNumber: 50,
+                lineNumber: 49,
                 columnNumber: 21
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/app/shorten/page.js",
-        lineNumber: 43,
+        lineNumber: 42,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
