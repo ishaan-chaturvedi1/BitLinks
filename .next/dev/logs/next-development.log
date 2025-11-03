@@ -10,3 +10,11 @@ Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
 [00:01:15.600] Server  LOG     The doc is - [object Object]
 [00:01:15.601] Server  LOG     The shortcut is - g
 [00:15:22.546] Server  LOG      ✓ Compiled in 1385ms
+[00:24:11.226] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:11.601] Browser WARN    Image with src "/vector.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:24:11.601] Browser WARN    Image with src "/vector.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:24:19.494] Browser LOG     Button clicked
+[00:24:21.488] Browser LOG     {"error":false,"message":"URL generated successfully!","success":true}
+[00:24:25.279] Server  LOG     The doc is - [object Object]
+[00:24:25.281] Server  LOG     The shortcut is - google

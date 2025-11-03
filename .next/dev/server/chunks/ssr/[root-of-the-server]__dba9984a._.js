@@ -22,7 +22,6 @@ module.exports = mod;
 "[project]/lib/mongodb.js [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-// lib/mongodb.js
 __turbopack_context__.s([
     "default",
     ()=>__TURBOPACK__default__export__
@@ -31,12 +30,11 @@ var __TURBOPACK__imported__module__$5b$externals$5d2f$mongodb__$5b$external$5d$_
 ;
 const uri = process.env.MONGODB_URI;
 if (!uri) {
-    throw new Error("❌ Please add MONGODB_URI to your .env.local file");
+    throw new Error("❌ MONGODB_URI is not defined in environment variables");
 }
 let client;
 let clientPromise;
 if ("TURBOPACK compile-time truthy", 1) {
-    // Reuse connection in dev to prevent multiple connections from hot reloads
     if (!/*TURBOPACK member replacement*/ __turbopack_context__.g._mongoClientPromise) {
         client = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongodb__$5b$external$5d$__$28$mongodb$2c$__cjs$29$__["MongoClient"](uri);
         /*TURBOPACK member replacement*/ __turbopack_context__.g._mongoClientPromise = client.connect();

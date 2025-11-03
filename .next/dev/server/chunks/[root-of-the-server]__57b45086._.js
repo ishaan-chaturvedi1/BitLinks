@@ -44,7 +44,6 @@ module.exports = mod;
 "[project]/lib/mongodb.js [app-route] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-// lib/mongodb.js
 __turbopack_context__.s([
     "default",
     ()=>__TURBOPACK__default__export__
@@ -53,12 +52,11 @@ var __TURBOPACK__imported__module__$5b$externals$5d2f$mongodb__$5b$external$5d$_
 ;
 const uri = process.env.MONGODB_URI;
 if (!uri) {
-    throw new Error("❌ Please add MONGODB_URI to your .env.local file");
+    throw new Error("❌ MONGODB_URI is not defined in environment variables");
 }
 let client;
 let clientPromise;
 if ("TURBOPACK compile-time truthy", 1) {
-    // Reuse connection in dev to prevent multiple connections from hot reloads
     if (!/*TURBOPACK member replacement*/ __turbopack_context__.g._mongoClientPromise) {
         client = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongodb__$5b$external$5d$__$28$mongodb$2c$__cjs$29$__["MongoClient"](uri);
         /*TURBOPACK member replacement*/ __turbopack_context__.g._mongoClientPromise = client.connect();
@@ -89,32 +87,45 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$serv
 ;
 const allowedOrigin = ("TURBOPACK compile-time value", "http://localhost:3000");
 async function POST(request) {
-    const body = await request.json();
-    const client = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$mongodb$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"];
-    const db = client.db("bitlinks");
-    const collection = db.collection("url");
-    const doc = await collection.findOne({
-        shortcut: body.shortcut
-    });
-    console.log(doc);
-    if (doc) {
-        return Response.json({
-            message: "URL already exitsts!!",
-            success: false,
+    try {
+        const body = await request.json();
+        const client = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$mongodb$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"];
+        const db = client.db("bitlinks");
+        const collection = db.collection("url");
+        const existing = await collection.findOne({
+            shortcut: body.shortcut
+        });
+        if (existing) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                message: "URL already exists!",
+                success: false,
+                error: true
+            }, {
+                status: 400
+            });
+        }
+        await collection.insertOne({
+            url: body.url,
+            shortcut: body.shortcut
+        });
+        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            message: "URL generated successfully!",
+            success: true,
+            error: false
+        }, {
+            headers: {
+                "Access-Control-Allow-Origin": allowedOrigin
+            }
+        });
+    } catch (error) {
+        console.error("❌ Error in /api/generate:", error);
+        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            message: "Internal server error",
             error: true
+        }, {
+            status: 500
         });
     }
-    let result = await collection.insertOne({
-        url: body.url,
-        shortcut: body.shortcut
-    });
-    return Response.json({
-        message: "URL generated succesfully!!",
-        success: true,
-        error: false
-    });
-    //TURBOPACK unreachable
-    ;
 }
 function OPTIONS() {
     return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({}, {
