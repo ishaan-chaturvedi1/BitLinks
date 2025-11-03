@@ -9,3 +9,4 @@ Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
 [00:01:07.294] Browser LOG     {"error":false,"message":"URL generated succesfully!!","success":true}
 [00:01:15.600] Server  LOG     The doc is - [object Object]
 [00:01:15.601] Server  LOG     The shortcut is - g
+[00:15:22.546] Server  LOG      ✓ Compiled in 1385ms

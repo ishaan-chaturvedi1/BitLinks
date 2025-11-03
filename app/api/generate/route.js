@@ -1,30 +1,50 @@
-import clientPromise from "@/lib/mongodb"
+import clientPromise from "@/lib/mongodb";
 import { NextResponse } from "next/server";
 
-const allowedOrigin = process.env.NEXT_PUBLIC_HOST
+const allowedOrigin = process.env.NEXT_PUBLIC_HOST;
 
 export async function POST(request) {
+  try {
+    const body = await request.json();
+    const client = await clientPromise;
+    const db = client.db("bitlinks");
+    const collection = db.collection("url");
 
-    const body = await request.json()
-    const client = await clientPromise
-    const db = client.db("bitlinks")
-    const collection = db.collection("url")
+    const existing = await collection.findOne({ shortcut: body.shortcut });
 
-    const doc = await collection.findOne({shortcut: body.shortcut})
-    console.log(doc)
-    if(doc){
-        return Response.json({message: "URL already exitsts!!", success: false, error: true})
+    if (existing) {
+      return NextResponse.json(
+        { message: "URL already exists!", success: false, error: true },
+        { status: 400 }
+      );
     }
 
-    let result = await collection.insertOne({
-        url: body.url,
-        shortcut: body.shortcut
-    })
+    await collection.insertOne({
+      url: body.url,
+      shortcut: body.shortcut,
+    });
 
-    return Response.json({message: "URL generated succesfully!!", success: true, error: false})
-    
+    return NextResponse.json(
+      { message: "URL generated successfully!", success: true, error: false },
+      {
+        headers: {
+          "Access-Control-Allow-Origin": allowedOrigin,
+        },
+      }
+    );
+  } catch (error) {
+    console.error("❌ Error in /api/generate:", error);
+    return NextResponse.json(
+      { message: "Internal server error", error: true },
+      { status: 500 }
+    );
+  }
+}
+
+// CORS Preflight
+export function OPTIONS() {
   return NextResponse.json(
-    { received: body },
+    {},
     {
       headers: {
         "Access-Control-Allow-Origin": allowedOrigin,
@@ -33,15 +53,4 @@ export async function POST(request) {
       },
     }
   );
-}
-
-// Add this for CORS preflight
-export function OPTIONS() {
-  return NextResponse.json({}, {
-    headers: {
-      "Access-Control-Allow-Origin": allowedOrigin,
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization",
-    },
-  });
 }
