@@ -52,17 +52,15 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$externals$5d2f$mongodb__$5b$external$5d$__$28$mongodb$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/mongodb [external] (mongodb, cjs)");
 ;
 const uri = process.env.MONGODB_URI;
-const options = {
-    useNewUrlParser: true
-};
+if (!uri) {
+    throw new Error("❌ Please add MONGODB_URI to your .env.local file");
+}
 let client;
 let clientPromise;
-if (!process.env.MONGODB_URI) {
-    throw new Error('Add Mongo URI to .env.local');
-}
 if ("TURBOPACK compile-time truthy", 1) {
+    // Reuse connection in dev to prevent multiple connections from hot reloads
     if (!/*TURBOPACK member replacement*/ __turbopack_context__.g._mongoClientPromise) {
-        client = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongodb__$5b$external$5d$__$28$mongodb$2c$__cjs$29$__["MongoClient"](uri, options);
+        client = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongodb__$5b$external$5d$__$28$mongodb$2c$__cjs$29$__["MongoClient"](uri);
         /*TURBOPACK member replacement*/ __turbopack_context__.g._mongoClientPromise = client.connect();
     }
     clientPromise = /*TURBOPACK member replacement*/ __turbopack_context__.g._mongoClientPromise;

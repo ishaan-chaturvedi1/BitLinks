@@ -1,30 +1,11 @@
-[00:00:05.861] Server  LOG      ✓ Ready in 3.8s
-[00:00:09.052] Server  LOG      ○ Compiling /shorten ...
-[00:00:19.529] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:46.066] Browser LOG     Button clicked
-[00:00:49.085] Server  ERROR   (node:4588) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
-(Use `node --trace-warnings ...` to show where the warning was created)
-[00:00:49.678] Server  LOG     {}
-[00:00:53.617] Browser LOG     {"error":true,"message":"URL already exitsts!!","success":false}
-[00:01:05.933] Server  LOG     null
-[00:01:05.979] Browser LOG     Button clicked
-[00:01:07.432] Browser LOG     {"error":false,"message":"URL generated succesfully!!","success":true}
-[00:02:16.896] Server  LOG      ✓ Compiled in 827ms
-[00:02:26.105] Server  LOG      ✓ Compiled in 1002ms
-[00:02:53.676] Browser WARN    Image with src "/vector.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:31:54.125] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:12:58.332] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:12:58.332] Browser WARN    Image with src "/vector.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:12:58.507] Browser WARN    Image with src "/vector.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[00:00:06.442] Server  LOG      ✓ Ready in 4.4s
+[00:00:43.274] Server  LOG      ○ Compiling / ...
+[00:00:56.188] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:56.561] Browser WARN    Image with src "/vector.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:56.666] Browser WARN    Image with src "/vector.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[01:13:06.141] Browser LOG     Button clicked
-[01:13:06.166] Server  LOG     null
-[01:13:07.796] Browser LOG     {"error":false,"message":"URL generated succesfully!!","success":true}
-[01:13:13.173] Server  LOG      ○ Compiling /[shortcut] ...
-[01:13:29.284] Server  LOG     The doc is - [object Object]
-[01:13:29.285] Server  LOG     The shortcut is - g
-[01:14:00.532] Server  LOG      ✓ Compiled in 706ms
-[01:19:12.324] Server  LOG      ✓ Compiled in 453ms
-[01:19:12.340] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/shorten/page.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[01:19:15.574] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:25:52.755] Server  LOG      ✓ Compiled in 2.2s
+[00:01:01.840] Browser LOG     Button clicked
+[00:01:05.405] Server  LOG     null
+[00:01:07.294] Browser LOG     {"error":false,"message":"URL generated succesfully!!","success":true}
+[00:01:15.600] Server  LOG     The doc is - [object Object]
+[00:01:15.601] Server  LOG     The shortcut is - g
