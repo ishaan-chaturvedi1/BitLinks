@@ -1,7 +1,7 @@
 import clientPromise from "@/lib/mongodb"
-import cors from "cors"
+import { NextResponse } from "next/server";
 
-app.use(cors())
+const allowedOrigin = process.env.NEXT_PUBLIC_HOST
 
 export async function POST(request) {
 
@@ -22,4 +22,26 @@ export async function POST(request) {
     })
 
     return Response.json({message: "URL generated succesfully!!", success: true, error: false})
+    
+  return NextResponse.json(
+    { received: body },
+    {
+      headers: {
+        "Access-Control-Allow-Origin": allowedOrigin,
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+      },
+    }
+  );
+}
+
+// Add this for CORS preflight
+export function OPTIONS() {
+  return NextResponse.json({}, {
+    headers: {
+      "Access-Control-Allow-Origin": allowedOrigin,
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    },
+  });
 }

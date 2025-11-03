@@ -1,1 +1,14 @@
-[00:00:15.351] Server  LOG      ✓ Ready in 9.3s
+[00:00:05.861] Server  LOG      ✓ Ready in 3.8s
+[00:00:09.052] Server  LOG      ○ Compiling /shorten ...
+[00:00:19.529] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:46.066] Browser LOG     Button clicked
+[00:00:49.085] Server  ERROR   (node:4588) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+[00:00:49.678] Server  LOG     {}
+[00:00:53.617] Browser LOG     {"error":true,"message":"URL already exitsts!!","success":false}
+[00:01:05.933] Server  LOG     null
+[00:01:05.979] Browser LOG     Button clicked
+[00:01:07.432] Browser LOG     {"error":false,"message":"URL generated succesfully!!","success":true}
+[00:02:16.896] Server  LOG      ✓ Compiled in 827ms
+[00:02:26.105] Server  LOG      ✓ Compiled in 1002ms
+[00:02:53.676] Browser WARN    Image with src "/vector.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
