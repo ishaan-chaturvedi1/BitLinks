@@ -27,7 +27,7 @@ const shorten = () => {
       redirect: "follow"
     };
 
-    fetch(`${process.env.NEXT_PUBLIC_HOST}/api/generate`, requestOptions)
+    fetch(`/api/generate`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         seturl("")

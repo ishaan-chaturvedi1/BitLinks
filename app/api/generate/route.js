@@ -1,36 +1,49 @@
-import clientPromise from "@/lib/mongodb";
 import { NextResponse } from "next/server";
+import clientPromise from "@/lib/mongodb";
 
-export async function POST(request) {
+export async function POST(req) {
   try {
-    console.log("🔥 API HIT");
+    const { url, shortcut } = await req.json();
 
-    const body = await request.json();
-    console.log("📩 Body:", body);
+    if (!url || !shortcut) {
+      return NextResponse.json({
+        success: false,
+        message: "Please provide both URL and shortcut."
+      });
+    }
 
     const client = await clientPromise;
-    console.log("✅ Connected to MongoDB");
-
     const db = client.db("bitlinks");
     const collection = db.collection("url");
 
-    const exists = await collection.findOne({ shortcut: body.shortcut });
-    console.log("🔍 Exists:", exists);
+    // Check if shortcut already exists
+    const existing = await collection.findOne({ shortcut });
 
-    if (exists) {
-      return NextResponse.json({ message: "Shortcut exists", success: false }, { status: 400 });
+    if (existing) {
+      return NextResponse.json({
+        success: false,
+        message: "This shortcut is already taken. Try another one!"
+      });
     }
 
+    // Insert new entry
     await collection.insertOne({
-      url: body.url,
-      shortcut: body.shortcut,
+      url,
+      shortcut,
+      createdAt: new Date()
     });
 
-    console.log("✅ Inserted");
+    return NextResponse.json({
+      success: true,
+      message: "Short URL created successfully!",
+      shortUrl: shortcut
+    });
 
-    return NextResponse.json({ message: "Done", success: true });
-  } catch (err) {
-    console.error("❌ SERVER ERROR:", err);
-    return NextResponse.json({ message: "Internal server error", success: false }, { status: 500 });
+  } catch (error) {
+    console.error("Error generating short URL:", error);
+    return NextResponse.json({
+      success: false,
+      message: "Something went wrong on our end."
+    });
   }
 }

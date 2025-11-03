@@ -18,3 +18,35 @@ Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
 [00:24:21.488] Browser LOG     {"error":false,"message":"URL generated successfully!","success":true}
 [00:24:25.279] Server  LOG     The doc is - [object Object]
 [00:24:25.281] Server  LOG     The shortcut is - google
+[00:31:28.952] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:29.326] Browser WARN    Image with src "/vector.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:31:29.326] Browser WARN    Image with src "/vector.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:31:35.016] Server  LOG     The doc is - [object Object]
+[00:31:35.018] Server  LOG     The shortcut is - g
+[00:31:35.414] Server  LOG     The doc is - null
+[00:31:35.417] Server  LOG     The shortcut is - ggg
+[00:31:36.301] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:39.808] Server  LOG     The doc is - [object Object]
+[00:31:39.809] Server  LOG     The shortcut is - g
+[00:31:40.200] Server  LOG     The doc is - null
+[00:31:40.202] Server  LOG     The shortcut is - ggg
+[00:31:40.959] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:47.908] Server  LOG     The doc is - null
+[00:31:47.912] Server  LOG     The shortcut is - y
+[00:31:48.844] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:09.807] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:10.103] Browser WARN    Image with src "/vector.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:32:10.103] Browser WARN    Image with src "/vector.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:32:19.296] Server  LOG     🔥 API HIT
+[00:32:19.306] Server  LOG     📩 Body: {}
+[00:32:19.310] Server  LOG     ✅ Connected to MongoDB
+[00:32:19.342] Browser LOG     Button clicked
+[00:32:19.356] Server  LOG     🔍 Exists: null
+[00:32:19.417] Server  LOG     ✅ Inserted
+[00:32:22.149] Browser LOG     {"message":"Done","success":true}
+[00:32:26.259] Server  LOG     The doc is - [object Object]
+[00:32:26.273] Server  LOG     The shortcut is - y
+[00:32:26.613] Server  LOG     The doc is - [object Object]
+[00:32:26.615] Server  LOG     The shortcut is - y

@@ -76,8 +76,6 @@ module.exports = mod;
 "use strict";
 
 __turbopack_context__.s([
-    "OPTIONS",
-    ()=>OPTIONS,
     "POST",
     ()=>POST
 ]);
@@ -85,21 +83,23 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$mongodb$2e$js__$5b$ap
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/server.js [app-route] (ecmascript)");
 ;
 ;
-const allowedOrigin = ("TURBOPACK compile-time value", "http://localhost:3000");
 async function POST(request) {
     try {
+        console.log("🔥 API HIT");
         const body = await request.json();
+        console.log("📩 Body:", body);
         const client = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$mongodb$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"];
+        console.log("✅ Connected to MongoDB");
         const db = client.db("bitlinks");
         const collection = db.collection("url");
-        const existing = await collection.findOne({
+        const exists = await collection.findOne({
             shortcut: body.shortcut
         });
-        if (existing) {
+        console.log("🔍 Exists:", exists);
+        if (exists) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                message: "URL already exists!",
-                success: false,
-                error: true
+                message: "Shortcut exists",
+                success: false
             }, {
                 status: 400
             });
@@ -108,33 +108,20 @@ async function POST(request) {
             url: body.url,
             shortcut: body.shortcut
         });
+        console.log("✅ Inserted");
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            message: "URL generated successfully!",
-            success: true,
-            error: false
-        }, {
-            headers: {
-                "Access-Control-Allow-Origin": allowedOrigin
-            }
+            message: "Done",
+            success: true
         });
-    } catch (error) {
-        console.error("❌ Error in /api/generate:", error);
+    } catch (err) {
+        console.error("❌ SERVER ERROR:", err);
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             message: "Internal server error",
-            error: true
+            success: false
         }, {
             status: 500
         });
     }
-}
-function OPTIONS() {
-    return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({}, {
-        headers: {
-            "Access-Control-Allow-Origin": allowedOrigin,
-            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-            "Access-Control-Allow-Headers": "Content-Type, Authorization"
-        }
-    });
 }
 }),
 ];
