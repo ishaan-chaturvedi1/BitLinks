@@ -12,3 +12,4 @@
 [00:02:16.896] Server  LOG      ✓ Compiled in 827ms
 [00:02:26.105] Server  LOG      ✓ Compiled in 1002ms
 [00:02:53.676] Browser WARN    Image with src "/vector.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:31:54.125] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
