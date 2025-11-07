@@ -53,7 +53,7 @@ const shorten = ()=>{
             body: raw,
             redirect: "follow"
         };
-        fetch(`${("TURBOPACK compile-time value", "http://localhost:3000")}/api/generate`, requestOptions).then((response)=>response.json()).then((result)=>{
+        fetch(`/api/generate`, requestOptions).then((response)=>response.json()).then((result)=>{
             seturl("");
             setShorturl("");
             setGenerated(`/${shorturl}`);
